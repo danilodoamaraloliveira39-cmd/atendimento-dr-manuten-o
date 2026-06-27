@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR Manutenção Residencial - Serviços de Qualidade</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a472a 0%, #2d6a4f 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 14px;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a472a 0%, #2d6a4f 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #f77f00;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .cta-button:hover {
+            background-color: #e67e00;
+        }
+
+        .section {
+            background: white;
+            padding: 60px 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: #1a472a;
+            margin-bottom: 30px;
+            font-size: 32px;
+            border-bottom: 3px solid #f77f00;
+            padding-bottom: 15px;
+        }
+
+        .section h3 {
+            color: #2d6a4f;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .info-box {
+            background-color: #f0f4f8;
+            border-left: 4px solid #f77f00;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .info-box strong {
+            color: #1a472a;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 4px solid #f77f00;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .card h4 {
+            color: #1a472a;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        footer {
+            background-color: #1a472a;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 15px;
+            color: #f77f00;
+        }
+
+        .footer-section a {
+            display: block;
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 8px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #2d6a4f;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        .compliance-badge {
+            display: inline-block;
+            background-color: #e8f4f8;
+            border: 2px solid #1a472a;
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin: 10px 5px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #1a472a;
+        }
+
+        .list-items {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .list-items li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+        }
+
+        .list-items li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #f77f00;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th {
+            background-color: #1a472a;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #f77f00;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .section {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">DR MANUTENÇÃO</div>
+            <nav>
+                <a href="#sobre">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#compliance">Compliance</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <div class="container">
+            <h1>Manutenção Residencial de Excelência</h1>
+            <p>Soluções profissionais em pintura, instalações elétricas, hidráulicas e obras de alvenaria</p>
+            <button class="cta-button">Solicitar Orçamento</button>
+        </div>
+    </div>
+
+    <!-- SEÇÃO SOBRE A EMPRESA -->
+    <div class="container">
+        <div class="section" id="sobre">
+            <h2>Sobre a DR Manutenção Residencial</h2>
+            
+            <p>A DR Manutenção Residencial é uma empresa especializada em serviços de manutenção, reforma e construção residencial. Com equipe qualificada e experiência comprovada, oferecemos soluções de qualidade para transformar e manter sua residência.</p>
+
+            <div class="info-box">
+                <strong>Informações da Empresa:</strong><br>
+                <strong>Razão Social:</strong> DR MANUTENCAO RESIDENCIAL LTDA.<br>
+                <strong>CNPJ:</strong> 24.253.507/0001-15<br>
+                <strong>Atividade Principal:</strong> Serviços de pintura de edifícios em geral (CNAE 43.30-4-04)<br>
+                <strong>Atividades Secundárias:</strong> Instalação e manutenção elétrica, Instalações hidráulicas, sanitárias e de gás, Obras de alvenaria<br>
+                <strong>Endereço:</strong> Rua Joaquim Felício dos Santos, 38 - Caixa Postal 02 - Bairro João Paulo - Florianópolis - SC - CEP 88.030-490<br>
+                <strong>Telefone:</strong> (48) 9986-1629<br>
+                <strong>E-mail de Contato:</strong> solucoes.adriana@gmail.com<br>
+                <strong>Website Oficial:</strong> www.drmanutencao.com.br
+            </div>
+
+            <h3>Autorização e Registro</h3>
+            <p>A DR Manutenção Residencial LTDA. está devidamente registrada na Junta Comercial do Estado de Santa Catarina e possui todas as autorizações necessárias para operar no segmento de serviços de construção, reforma e manutenção residencial.</p>
+
+            <div class="compliance-badge">✓ Registrada Junta Comercial</div>
+            <div class="compliance-badge">✓ CNPJ Ativo</div>
+            <div class="compliance-badge">✓ Conformidade Google Ads</div>
+        </div>
+    </div>
+
+    <!-- SEÇÃO DE SERVIÇOS -->
+    <div class="container">
+        <div class="section" id="servicos">
+            <h2>Nossos Serviços</h2>
+            <p>Oferecemos uma ampla gama de serviços de manutenção e reforma residencial:</p>
+
+            <div class="grid">
+                <div class="card">
+                    <h4>🎨 Serviços de Pintura</h4>
+                    <p>Pintura de edifícios em geral, incluindo fachadas, interiores, acabamentos especiais e restauração de superfícies.</p>
+                </div>
+                <div class="card">
+                    <h4>⚡ Instalações Elétricas</h4>
+                    <p>Instalação, manutenção e reforma de sistemas elétricos residenciais com segurança e conformidade normativa.</p>
+                </div>
+                <div class="card">
+                    <h4>💧 Instalações Hidráulicas</h4>
+                    <p>Serviços de instalação, manutenção e reparo de sistemas hidráulicos, sanitários e de gás.</p>
+                </div>
+                <div class="card">
+                    <h4>🧱 Obras de Alvenaria</h4>
+                    <p>Construção, reforma e manutenção de estruturas em alvenaria com acabamento profissional.</p>
+                </div>
+                <div class="card">
+                    <h4>🔧 Manutenção Geral</h4>
+                    <p>Serviços gerais de manutenção preventiva e corretiva para residências.</p>
+                </div>
+                <div class="card">
+                    <h4>📋 Consultoria Técnica</h4>
+                    <p>Avaliação técnica de imóveis e orientação para melhorias e reformas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEÇÃO DE COMPLIANCE E POLÍTICAS -->
+    <div class="container">
+        <div class="section" id="compliance">
+            <h2>Conformidade e Políticas</h2>
+
+            <h3>1. Política de Privacidade e Proteção de Dados</h3>
+            <p>A DR Manutenção Residencial LTDA. está em total conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018).</p>
+            
+            <div class="info-box">
+                <strong>Compromissos com Dados Pessoais:</strong>
+                <ul class="list-items">
+                    <li>Coleta apenas dados necessários para prestação de serviços</li>
+                    <li>Proteção de dados através de sistemas seguros</li>
+                    <li>Não compartilhamento de dados com terceiros sem consentimento explícito</li>
+                    <li>Direito de acesso, correção e exclusão de dados pessoais</li>
+                    <li>Transparência total sobre uso de dados</li>
+                </ul>
+            </div>
+
+            <h3>2. Política de Publicidade e Transparência</h3>
+            <p>Todos os anúncios, materiais promocionais e comunicações da DR Manutenção Residencial LTDA. cumprem rigorosamente com:</p>
+            
+            <ul class="list-items">
+                <li>Políticas de Publicidade do Google Ads</li>
+                <li>Código de Ética Profissional</li>
+                <li>Normas de Publicidade da ABNT</li>
+                <li>Diretrizes do Código de Defesa do Consumidor</li>
+                <li>Regulamentações de Publicidade Enganosa</li>
+            </ul>
+
+            <div class="highlight">
+                <strong>Importante:</strong> Todos os materiais publicitários contêm informações claras e precisas sobre serviços, preços, prazos e condições de execução. Nenhuma informação enganosa ou omitida é utilizada em nossas campanhas.
+            </div>
+
+            <h3>3. Política de Atendimento e Reclamações</h3>
+            <p>Mantemos canais abertos para reclamações, sugestões e dúvidas dos clientes:</p>
+            
+            <table>
+                <tr>
+                    <th>Canal</th>
+                    <th>Contato</th>
+                    <th>Disponibilidade</th>
+                </tr>
+                <tr>
+                    <td>Telefone</td>
+                    <td>(48) 9986-1629</td>
+                    <td>Segunda a Sexta, 8h às 18h</td>
+                </tr>
+                <tr>
+                    <td>E-mail</td>
+                    <td>solucoes.adriana@gmail.com</td>
+                    <td>24 horas (resposta em 24h)</td>
+                </tr>
+                <tr>
+                    <td>WhatsApp</td>
+                    <td>(48) 9986-1629</td>
+                    <td>Segunda a Sexta, 8h às 18h</td>
+                </tr>
+                <tr>
+                    <td>Presencialmente</td>
+                    <td>Florianópolis - SC</td>
+                    <td>Mediante agendamento</td>
+                </tr>
+            </table>
+
+            <h3>4. Conformidade Regulatória</h3>
+            <p>A DR Manutenção Residencial LTDA. atende integralmente aos requisitos regulatórios estabelecidos por:</p>
+            
+            <ul class="list-items">
+                <li><strong>Junta Comercial de Santa Catarina:</strong> Registro e autorização para funcionamento</li>
+                <li><strong>Receita Federal:</strong> Conformidade fiscal e tributária</li>
+                <li><strong>Prefeitura Municipal de Florianópolis:</strong> Alvarás e autorizações municipais</li>
+                <li><strong>Google Ads:</strong> Políticas de Publicidade e Conformidade de Anúncios</li>
+                <li><strong>Código de Defesa do Consumidor:</strong> Proteção e direitos do consumidor</li>
+            </ul>
+
+            <h3>5. Política de Qualidade e Segurança</h3>
+            <p>A DR Manutenção Residencial implementa rigorosos padrões de qualidade e segurança:</p>
+            
+            <div class="info-box">
+                <strong>Medidas de Qualidade e Segurança:</strong>
+                <ul class="list-items">
+                    <li>Equipe qualificada e treinada</li>
+                    <li>Uso de materiais de qualidade certificada</li>
+                    <li>Conformidade com normas técnicas (NBR)</li>
+                    <li>Garantia nos serviços prestados</li>
+                    <li>Segurança ocupacional e proteção do cliente</li>
+                </ul>
+            </div>
+
+            <h3>6. Termos e Condições de Uso</h3>
+            <p>Ao contratar os serviços da DR Manutenção Residencial LTDA., você concorda com os seguintes termos:</p>
+            
+            <ul class="list-items">
+                <li>Todas as informações fornecidas devem ser precisas e completas</li>
+                <li>Os serviços serão executados conforme especificado no orçamento aprovado</li>
+                <li>Prazos e condições de pagamento serão acordados previamente</li>
+                <li>Garantia de 12 meses em serviços de pintura e 24 meses em instalações</li>
+                <li>Qualquer alteração nos termos será comunicada com antecedência mínima de 7 dias</li>
+            </ul>
+
+            <h3>7. Certificações e Conformidade</h3>
+            <div class="info-box">
+                <strong>Conformidades e Registros:</strong>
+                <ul class="list-items">
+                    <li>CNPJ: 24.253.507/0001-15 (Ativo)</li>
+                    <li>Inscrição Estadual: Ativa</li>
+                    <li>Registro na Junta Comercial: Ativo</li>
+                    <li>Conformidade LGPD</li>
+                    <li>Conformidade com Google Ads</li>
+                </ul>
+            </div>
+
+            <h3>8. Aprovação para Google Ads</h3>
+            <p>A DR Manutenção Residencial LTDA. atende a todos os requisitos do Google Ads para anúncios de serviços:</p>
+            
+            <table>
+                <tr>
+                    <th>Requisito</th>
+                    <th>Status</th>
+                    <th>Comprovação</th>
+                </tr>
+                <tr>
+                    <td>CNPJ Ativo</td>
+                    <td>✓ Atendido</td>
+                    <td>24.253.507/0001-15</td>
+                </tr>
+                <tr>
+                    <td>Registro Comercial</td>
+                    <td>✓ Atendido</td>
+                    <td>Junta Comercial SC</td>
+                </tr>
+                <tr>
+                    <td>Política de Privacidade</td>
+                    <td>✓ Atendido</td>
+                    <td>Disponível neste site</td>
+                </tr>
+                <tr>
+                    <td>Termos de Serviço</td>
+                    <td>✓ Atendido</td>
+                    <td>Disponível neste site</td>
+                </tr>
+                <tr>
+                    <td>Informações de Contato</td>
+                    <td>✓ Atendido</td>
+                    <td>(48) 9986-1629 | solucoes.adriana@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Transparência em Anúncios</td>
+                    <td>✓ Atendido</td>
+                    <td>Todos os anúncios contêm informações claras</td>
+                </tr>
+            </table>
+
+            <h3>9. Compromisso com Responsabilidade Social</h3>
+            <p>A DR Manutenção Residencial LTDA. está comprometida com práticas comerciais éticas e responsáveis:</p>
+            
+            <ul class="list-items">
+                <li>Transparência total em todas as comunicações</li>
+                <li>Atendimento justo e equitativo a todos os clientes</li>
+                <li>Respeito aos direitos do consumidor</li>
+                <li>Sustentabilidade ambiental em operações</li>
+                <li>Combate à discriminação e promoção de inclusão</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SEÇÃO DE CONTATO -->
+    <div class="container">
+        <div class="section" id="contato">
+            <h2>Entre em Contato</h2>
+            <p>Estamos à disposição para esclarecer dúvidas, fornecer informações adicionais ou processar sua solicitação de orçamento.</p>
+
+            <div class="grid">
+                <div class="card">
+                    <h4>📞 Telefone</h4>
+                    <p><strong>(48) 9986-1629</strong><br>
+                    Segunda a Sexta: 8h às 18h</p>
+                </div>
+                <div class="card">
+                    <h4>📧 E-mail</h4>
+                    <p><strong>solucoes.adriana@gmail.com</strong><br>
+                    Resposta em até 24 horas</p>
+                </div>
+                <div class="card">
+                    <h4>📍 Endereço</h4>
+                    <p>Rua Joaquim Felício dos Santos, 38<br>
+                    Bairro João Paulo<br>
+                    Florianópolis - SC - CEP 88.030-490</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sobre a DR Manutenção</h4>
+                    <a href="#sobre">Quem Somos</a>
+                    <a href="#servicos">Serviços</a>
+                    <a href="#compliance">Compliance</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <a href="#">Galeria de Projetos</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Orçamento</a>
+                    <a href="#">Suporte</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">Aviso Legal</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <a href="tel:+554899861629">(48) 9986-1629</a>
+                    <a href="mailto:solucoes.adriana@gmail.com">solucoes.adriana@gmail.com</a>
+                    <a href="#">WhatsApp</a>
+                    <a href="#">Localização</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DR MANUTENCAO RESIDENCIAL LTDA. | CNPJ: 24.253.507/0001-15</p>
+                <p>Todos os direitos reservados. Registrada na Junta Comercial de Santa Catarina.</p>
+                <p style="margin-top: 10px; font-size: 11px;">
+                    Este site contém informações sobre produtos e serviços da DR Manutenção Residencial LTDA. 
+                    Para informações completas sobre serviços, garantias e condições, consulte nossos termos de serviço ou entre em contato conosco.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
