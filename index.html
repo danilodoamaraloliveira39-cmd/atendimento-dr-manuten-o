@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NetSuporte - Central de Ajuda e Conexão</title>
+    <title>NetSuporte - Central de Ajuda</title>
     <style>
         * {
             margin: 0;
@@ -90,7 +90,7 @@
 
         .hero p {
             font-size: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             opacity: 0.95;
         }
 
@@ -134,7 +134,7 @@
             color: #dc2626;
         }
 
-        /* Main Container */
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -153,304 +153,129 @@
             text-align: center;
         }
 
-        /* Problemas Comuns */
-        .problemas {
+        /* Serviços */
+        .servicos {
             background: #f9fafb;
         }
 
-        .problemas-grid {
+        .servicos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
-        .problema-card {
+        .servico-card {
             background: white;
-            padding: 30px;
+            padding: 40px 30px;
             border-radius: 8px;
             border-left: 5px solid #dc2626;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             transition: all 0.3s;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .problema-card:hover {
+        .servico-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         }
 
-        .problema-card h3 {
-            color: #dc2626;
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
-        .problema-card p {
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .problema-card .btn {
-            width: 100%;
-            text-align: center;
-        }
-
-        /* Soluções */
-        .solucoes {
-            background: white;
-        }
-
-        .solucoes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .solucao-item {
-            background: #f9fafb;
-            padding: 25px;
-            border-radius: 8px;
-            text-align: center;
-            border-top: 4px solid #dc2626;
-        }
-
-        .solucao-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
+        .servico-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
             color: #dc2626;
         }
 
-        .solucao-item h3 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        /* Suporte */
-        .suporte {
-            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
-            color: white;
-        }
-
-        .suporte h2 {
-            color: white;
-        }
-
-        .suporte-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .suporte-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 8px;
-            border: 2px solid white;
-            text-align: center;
-        }
-
-        .suporte-card h3 {
+        .servico-card h3 {
+            color: #dc2626;
             margin-bottom: 15px;
             font-size: 22px;
         }
 
-        .suporte-card p {
-            margin-bottom: 20px;
-            opacity: 0.95;
+        .servico-card p {
+            color: #666;
+            margin-bottom: 25px;
+            flex-grow: 1;
         }
 
-        .suporte-card .btn {
-            background: white;
-            color: #dc2626;
-            width: 100%;
-        }
-
-        .suporte-card .btn:hover {
-            background: #f0f0f0;
-        }
-
-        /* SAC */
-        .sac {
-            background: white;
-        }
-
-        .sac-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .sac-text h3 {
-            color: #dc2626;
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .sac-text ul {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .sac-text li {
-            padding: 12px 0;
-            padding-left: 30px;
-            position: relative;
-            color: #555;
-        }
-
-        .sac-text li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #dc2626;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .sac-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .sac-buttons .btn {
+        .servico-card .btn {
             width: 100%;
             text-align: center;
         }
 
-        /* FAQ */
-        .faq {
-            background: #f9fafb;
-        }
-
-        .faq-item {
-            background: white;
-            margin-bottom: 15px;
+        .servico-card .btn-atendimento {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            color: white;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
             border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .faq-question {
-            background: #f9fafb;
-            padding: 20px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+        }
+
+        .servico-card .btn-atendimento:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.5);
+            background: linear-gradient(135deg, #991b1b 0%, #dc2626 100%);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: white;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-left: 4px solid #dc2626;
-            transition: all 0.3s;
-        }
-
-        .faq-question:hover {
-            background: #f0f0f0;
-        }
-
-        .faq-question h4 {
-            color: #333;
-            margin: 0;
-        }
-
-        .faq-toggle {
-            color: #dc2626;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .faq-answer {
-            padding: 20px;
-            display: none;
-            background: white;
-            color: #666;
-            border-top: 1px solid #eee;
-        }
-
-        .faq-answer.active {
-            display: block;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         /* Footer */
         footer {
             background: #1f2937;
             color: white;
-            padding: 40px 20px;
+            padding: 30px 20px;
             text-align: center;
         }
 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-            text-align: left;
         }
 
-        .footer-section h4 {
-            color: #dc2626;
-            margin-bottom: 15px;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
+        .footer-content p {
             margin-bottom: 10px;
         }
 
-        .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: white;
-        }
-
         .footer-bottom {
+            color: #999;
+            font-size: 14px;
+            margin-top: 20px;
             border-top: 1px solid #444;
             padding-top: 20px;
-            color: #999;
-        }
-
-        /* Responsivo */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav a {
-                margin-left: 15px;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .sac-content {
-                grid-template-columns: 1fr;
-            }
-
-            section h2 {
-                font-size: 28px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .hero-buttons .btn {
-                width: 100%;
-            }
         }
 
         /* WhatsApp Button */
@@ -477,6 +302,48 @@
             transform: scale(1.1);
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
         }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin-left: 15px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+
+            .hero-buttons,
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn,
+            .cta-buttons .btn {
+                width: 100%;
+            }
+
+            .servicos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta h2 {
+                font-size: 28px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -488,11 +355,8 @@
                 <span>NetSuporte</span>
             </div>
             <nav>
-                <a href="#problemas">Problemas</a>
-                <a href="#solucoes">Soluções</a>
-                <a href="#suporte">Suporte</a>
-                <a href="#sac">SAC</a>
-                <a href="#faq">FAQ</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#contato">Contato</a>
             </nav>
         </div>
     </header>
@@ -500,227 +364,62 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
-            <h1>🌐 Sua Conexão é Nossa Prioridade</h1>
-            <p>Resolvemos problemas de internet lenta e oferecemos suporte técnico 24/7</p>
+            <h1>Bem-vindo à NetSuporte</h1>
+            <p>Suporte rápido e eficiente para seus problemas de conexão</p>
             <div class="hero-buttons">
-                <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Preciso%20de%20ajuda%20com%20minha%20conexão" class="btn btn-primary">💬 Fale Conosco no WhatsApp</a>
-                <a href="#suporte" class="btn btn-secondary">Conhecer Serviços</a>
+                <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Gostaria%20de%20iniciar%20um%20atendimento." class="btn btn-primary">💬 Iniciar Atendimento</a>
+                <a href="#servicos" class="btn btn-secondary">Ver Serviços</a>
             </div>
         </div>
     </section>
 
-    <!-- Problemas Comuns -->
-    <section id="problemas" class="problemas">
+    <!-- Serviços -->
+    <section class="servicos" id="servicos">
         <div class="container">
-            <h2>🔴 Problemas Comuns</h2>
-            <div class="problemas-grid">
-                <div class="problema-card">
-                    <h3>⚡ Conexão Lenta</h3>
-                    <p>Sua internet está carregando muito lentamente? Vídeos travando? Jogos com lag? Temos a solução!</p>
-                    <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Minha%20conexão%20está%20lenta" class="btn btn-primary">Reportar Problema</a>
+            <h2>Nossos Serviços</h2>
+            <div class="servicos-grid">
+                <!-- Suporte -->
+                <div class="servico-card">
+                    <div class="servico-icon">🎧</div>
+                    <h3>Suporte</h3>
+                    <p>Atendimento especializado para resolver seus problemas de forma rápida.</p>
+                    <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Preciso%20de%20suporte%20técnico." class="btn btn-atendimento">Solicitar Atendimento</a>
                 </div>
 
-                <div class="problema-card">
-                    <h3>🔌 Sem Conexão</h3>
-                    <p>Internet desconectando constantemente? Sem sinal? Não consegue se conectar? Estamos aqui para ajudar!</p>
-                    <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Minha%20internet%20desconectou" class="btn btn-primary">Reportar Problema</a>
+                <!-- Internet Lenta -->
+                <div class="servico-card">
+                    <div class="servico-icon">📶</div>
+                    <h3>Internet Lenta</h3>
+                    <p>Diagnosticamos e resolvemos problemas de velocidade de conexão.</p>
+                    <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Minha%20internet%20está%20lenta." class="btn btn-atendimento">Solicitar Atendimento</a>
                 </div>
 
-                <div class="problema-card">
-                    <h3>📶 Sinal Fraco</h3>
-                    <p>Sinal fraco em determinadas áreas da sua casa? Cobertura instável? Podemos otimizar sua rede!</p>
-                    <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Tenho%20sinal%20fraco" class="btn btn-primary">Reportar Problema</a>
+                <!-- Solicitar Fatura -->
+                <div class="servico-card">
+                    <div class="servico-icon">📄</div>
+                    <h3>Solicitar Fatura</h3>
+                    <p>Solicite sua fatura de forma rápida e fácil via WhatsApp.</p>
+                    <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Gostaria%20de%20solicitar%20minha%20fatura." class="btn btn-atendimento">Solicitar Atendimento</a>
                 </div>
 
-                <div class="problema-card">
-                    <h3>🖥️ Problemas no Roteador</h3>
-                    <p>Roteador com defeito? Não consegue resetar? Precisa de configuração? Temos técnicos especializados!</p>
-                    <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Tenho%20problema%20no%20roteador" class="btn btn-primary">Reportar Problema</a>
-                </div>
-
-                <div class="problema-card">
-                    <h3>📱 Problemas no WiFi</h3>
-                    <p>WiFi não conecta? Senha não funciona? Dispositivos não reconhecem a rede? Resolvemos!</p>
-                    <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Tenho%20problema%20no%20WiFi" class="btn btn-primary">Reportar Problema</a>
-                </div>
-
-                <div class="problema-card">
-                    <h3>🔐 Problemas de Segurança</h3>
-                    <p>Preocupado com a segurança da sua rede? Quer proteger seus dados? Oferecemos consultoria completa!</p>
-                    <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Tenho%20dúvidas%20sobre%20segurança" class="btn btn-primary">Reportar Problema</a>
+                <!-- Outros Assuntos -->
+                <div class="servico-card">
+                    <div class="servico-icon">💬</div>
+                    <h3>Outros Assuntos</h3>
+                    <p>Fale conosco sobre qualquer tema relacionado aos nossos serviços.</p>
+                    <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Tenho%20uma%20dúvida." class="btn btn-atendimento">Solicitar Atendimento</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Soluções -->
-    <section id="solucoes" class="solucoes">
+    <!-- CTA Section -->
+    <section class="cta" id="contato">
         <div class="container">
-            <h2>✅ Nossas Soluções</h2>
-            <div class="solucoes-grid">
-                <div class="solucao-item">
-                    <div class="solucao-icon">🔧</div>
-                    <h3>Diagnóstico Técnico</h3>
-                    <p>Análise completa de sua conexão para identificar o problema</p>
-                </div>
-
-                <div class="solucao-item">
-                    <div class="solucao-icon">⚙️</div>
-                    <h3>Otimização de Rede</h3>
-                    <p>Configuração ideal para máxima velocidade e estabilidade</p>
-                </div>
-
-                <div class="solucao-item">
-                    <div class="solucao-icon">🛡️</div>
-                    <h3>Proteção de Dados</h3>
-                    <p>Segurança avançada para sua rede e dispositivos</p>
-                </div>
-
-                <div class="solucao-item">
-                    <div class="solucao-icon">📞</div>
-                    <h3>Suporte 24/7</h3>
-                    <p>Atendimento técnico disponível a qualquer hora</p>
-                </div>
-
-                <div class="solucao-item">
-                    <div class="solucao-icon">🚀</div>
-                    <h3>Upgrade de Velocidade</h3>
-                    <p>Aumente sua velocidade de internet para melhor desempenho</p>
-                </div>
-
-                <div class="solucao-item">
-                    <div class="solucao-icon">📊</div>
-                    <h3>Monitoramento Contínuo</h3>
-                    <p>Acompanhamento em tempo real da sua conexão</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Suporte -->
-    <section id="suporte" class="suporte">
-        <div class="container">
-            <h2>🆘 Central de Suporte</h2>
-            <div class="suporte-grid">
-                <div class="suporte-card">
-                    <h3>💬 WhatsApp</h3>
-                    <p>Chat rápido e direto com nossos técnicos. Resposta em minutos!</p>
-                    <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Preciso%20de%20ajuda" class="btn">Conversar Agora</a>
-                </div>
-
-                <div class="suporte-card">
-                    <h3>📞 Telefone</h3>
-                    <p>Ligue para nossa central de atendimento. Disponível 24 horas!</p>
-                    <a href="tel:5519982717700" class="btn">Ligar Agora</a>
-                </div>
-
-                <div class="suporte-card">
-                    <h3>📧 Email</h3>
-                    <p>Envie sua dúvida por email. Respondemos em até 2 horas!</p>
-                    <a href="mailto:suporte@netsuporte.com.br" class="btn">Enviar Email</a>
-                </div>
-
-                <div class="suporte-card">
-                    <h3>🏢 Presencial</h3>
-                    <p>Visite nossa unidade. Atendimento personalizado e rápido!</p>
-                    <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Gostaria%20de%20agendar%20uma%20visita" class="btn">Agendar Visita</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SAC -->
-    <section id="sac" class="sac">
-        <div class="container">
-            <h2>🎯 Serviço de Atendimento ao Cliente (SAC)</h2>
-            <div class="sac-content">
-                <div class="sac-text">
-                    <h3>Por que escolher nosso SAC?</h3>
-                    <ul>
-                        <li>Atendimento rápido e eficiente</li>
-                        <li>Técnicos certificados e experientes</li>
-                        <li>Disponibilidade 24/7</li>
-                        <li>Múltiplos canais de contato</li>
-                        <li>Garantia de satisfação</li>
-                        <li>Suporte em português</li>
-                        <li>Sem fila de espera</li>
-                        <li>Soluções personalizadas</li>
-                    </ul>
-                </div>
-
-                <div class="sac-buttons">
-                    <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte%20SAC!%20Preciso%20de%20ajuda" class="btn btn-primary">💬 WhatsApp SAC</a>
-                    <a href="tel:5519982717700" class="btn btn-primary">📞 Ligar SAC</a>
-                    <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Gostaria%20de%20fazer%20uma%20reclamação" class="btn btn-primary">📝 Registrar Reclamação</a>
-                    <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Gostaria%20de%20fazer%20uma%20sugestão" class="btn btn-primary">💡 Enviar Sugestão</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="faq">
-        <div class="container">
-            <h2>❓ Perguntas Frequentes</h2>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <h4>Como posso melhorar a velocidade da minha internet?</h4>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Existem várias formas: 1) Reinicie seu roteador, 2) Aproxime-se do roteador, 3) Reduza a quantidade de dispositivos conectados, 4) Atualize o firmware do roteador, 5) Mude para uma frequência menos congestionada (2.4GHz para 5GHz). Se nada funcionar, entre em contato conosco!</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <h4>Qual é o horário de atendimento do suporte?</h4>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Nosso suporte está disponível 24 horas por dia, 7 dias por semana! Você pode nos contatar a qualquer momento via WhatsApp, telefone ou email. Estamos sempre prontos para ajudar!</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <h4>Como faço para resetar meu roteador?</h4>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Para resetar seu roteador: 1) Desconecte o cabo de energia, 2) Aguarde 30 segundos, 3) Reconecte o cabo, 4) Aguarde 2-3 minutos para o roteador reiniciar completamente. Se o problema persistir, nos contacte!</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <h4>Por que minha internet desconecta constantemente?</h4>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Desconexões constantes podem ser causadas por: 1) Interferência de outros dispositivos, 2) Sinal fraco, 3) Roteador com defeito, 4) Problemas na linha da operadora, 5) Muitos dispositivos conectados. Nossos técnicos podem diagnosticar o problema específico!</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <h4>Qual é a melhor posição para colocar o roteador?</h4>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>O melhor local é: 1) Centralizado na casa, 2) Em local elevado (prateleira ou parede), 3) Longe de obstáculos, 4) Longe de microondas e telefones sem fio, 5) Longe de paredes espessas. Isso garante melhor cobertura e sinal mais forte!</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <h4>Como posso proteger minha rede WiFi?</h4>
-                    <span class="faq-toggle">+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Dicas de segurança: 1) Use uma senha forte (mínimo 12 caracteres), 2) Ative a criptografia WPA3 ou WPA2, 3) Mude o nome padrão do roteador, 4) Desative WPS, 5) Atualize o firmware regularmente, 6) Mude a senha padrão do roteador. Nossos técnicos podem fazer isso para você!</p>
-                </div>
+            <h2>Pronto para resolver seu problema?</h2>
+            <p>Clique no botão abaixo e inicie um atendimento via WhatsApp agora mesmo!</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/19982717700?text=Olá%20NetSuporte!%20Gostaria%20de%20iniciar%20um%20atendimento." class="btn btn-primary">💬 Iniciar Atendimento</a>
             </div>
         </div>
     </section>
@@ -728,66 +427,26 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-section">
-                <h4>Sobre Nós</h4>
-                <p>NetSuporte é sua parceira de confiança em soluções de internet. Com técnicos experientes e atendimento 24/7, garantimos sua conectividade.</p>
-            </div>
-
-            <div class="footer-section">
-                <h4>Contato Rápido</h4>
-                <ul>
-                    <li><a href="https://wa.me/5519982717700">💬 WhatsApp: 63 9996-1585 </a></li>
-                    <li><a href="tel:5519982717700">📞 Telefone: (11) 940261041</a></li>
-                    <li><a href="mailto:suporte@netsuporte.com.br">📧 Email: suporte@netsuporte.com.br</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4>Links Úteis</h4>
-                <ul>
-                    <li><a href="#problemas">Problemas Comuns</a></li>
-                    <li><a href="#solucoes">Soluções</a></li>
-                    <li><a href="#suporte">Suporte</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </div>
+            <p><strong>NetSuporte - Central de Ajuda</strong></p>
+            <p>Estamos aqui para ajudar você 24/7</p>
         </div>
-
         <div class="footer-bottom">
-            <p>&copy; 2024 NetSuporte. Todos os direitos reservados. | Desenvolvido com ❤️</p>
+            <p>&copy; 2026 NetSuporte. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Preciso%20de%20ajuda" class="whatsapp-btn" title="Fale conosco no WhatsApp">💬</a>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5519982717700?text=Olá%20NetSuporte!%20Gostaria%20de%20iniciar%20um%20atendimento." class="whatsapp-btn" title="Fale conosco no WhatsApp">💬</a>
 
     <script>
-        function toggleFaq(element) {
-            const answer = element.nextElementSibling;
-            const toggle = element.querySelector('.faq-toggle');
-            
-            // Fechar outras respostas abertas
-            document.querySelectorAll('.faq-answer.active').forEach(item => {
-                if (item !== answer) {
-                    item.classList.remove('active');
-                    item.previousElementSibling.querySelector('.faq-toggle').textContent = '+';
-                }
-            });
-
-            // Alternar a resposta atual
-            answer.classList.toggle('active');
-            toggle.textContent = answer.classList.contains('active') ? '−' : '+';
-        }
-
-        // Smooth scroll para links de navegação
+        // Smooth scroll para links internos
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                        behavior: 'smooth'
                     });
                 }
             });
